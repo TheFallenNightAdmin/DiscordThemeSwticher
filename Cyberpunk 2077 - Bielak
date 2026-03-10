@@ -1,0 +1,109 @@
+ @font-face {
+              font-family: 'Rajdhani';
+              font-style: normal;
+              font-weight: 400;
+              src: url(https://fonts.gstatic.com/s/rajdhani/v16/LDIxapCSOBg7S-QT7p4HM-Y.woff2) format('woff2');
+            }
+
+            @import url('https://patrykbielanin.github.io/discord-cyberpunk2077-theme/base.css');
+
+            :root {
+                --background-primary: linear-gradient(180deg, rgba(23,0,5,.75) 10%, rgba(0,0,0,1) 65%);
+                --background-secondary: linear-gradient(180deg, rgba(23,0,5,.75) 10%, rgba(0,0,0,1) 65%);
+                --font-primary: 'Rajdhani';
+                --primary-text-color: lightgray;
+
+                --primary: 23, 13, 22;
+                --red: 255, 0, 60;
+                --yellow: 243, 230, 0;
+                --green: 71, 213, 139;
+                --dark-green: 56, 171, 111;
+
+                --neon-red-color: rgb(var(--red));
+                --neon-yellow-color: rgb(var(--yellow));
+                --neon-green-color: rgb(var(--green));
+
+                --avatar-circle: 0;
+                --avatar-rounded: 5px;
+                --avatar-border: 1px solid var(--neon-red-color);
+            }
+
+            body {
+                font-family: 'Rajdhani', sans-serif !important;
+                color: var(--primary-text-color) !important;
+            }
+
+            :root {
+              --glow-halo-size: 6px;
+              --glow-soft-size: 20px;
+              --glow-opacity-halo: 0.95;
+              --glow-opacity-soft: 0.28;
+            }
+
+            .theme-dark body,
+            .theme-dark span,
+            .theme-dark p,
+            .theme-dark a,
+            .theme-dark h1,
+            .theme-dark h2,
+            .theme-dark h3,
+            .theme-dark .title_f75fb0,
+            .theme-dark .header_f37cb1,
+            .theme-dark .message-2qnXI6,
+            .theme-dark .messageContent-2qWWxC,
+            .theme-dark .contents_c19a55,
+            .theme-dark .markup__75297,
+            .theme-dark .timestamp_c19a55 time {
+              color: var(--primary-text-color) !important;
+              text-shadow:
+                0 0 var(--glow-halo-size) rgba(var(--red), var(--glow-opacity-halo)),
+                0 0 var(--glow-soft-size) rgba(var(--red), var(--glow-opacity-soft));
+              transition: text-shadow 0.25s ease;
+            }
+
+            .theme-dark .username_c19a55,
+            .theme-dark .username,
+            .theme-dark .name__2ea32,
+            .theme-dark .name__29444 {
+              color: rgb(var(--yellow)) !important;
+              text-shadow:
+                0 0 calc(var(--glow-halo-size) * 0.8) rgba(var(--yellow), 0.98),
+                0 0 calc(var(--glow-soft-size) * 0.9) rgba(var(--yellow), 0.30);
+              font-weight: 700 !important;
+            }
+
+            .theme-dark .markup__75297 code,
+            .theme-dark .container_b7e1cb .embedWrapper_b7e1cb,
+            .theme-dark .message-2qnXI6 .messageContent-2qWWxC .markup__75297 {
+              text-shadow:
+                0 0 4px rgba(var(--green), 0.9),
+                0 0 18px rgba(var(--green), 0.18);
+            }
+
+            .title_f75fb0,
+            .toolbar__9293f,
+            .topic__6ec1a,
+            .headerContent_f37cb1 {
+              text-shadow:
+                0 0 8px rgba(var(--red), 1),
+                0 0 28px rgba(var(--red), 0.35);
+            }
+
+            #app-mount, .theme-dark body {
+              box-shadow: inset 0 0 60px rgba(var(--primary), 0.08);
+            }
+
+            .cyber-glow-strong .theme-dark span,
+            .cyber-glow-strong .theme-dark p,
+            .cyber-glow-strong .theme-dark a,
+            .cyber-glow-strong .theme-dark .messageContent-2qWWxC {
+              text-shadow:
+                0 0 8px rgba(var(--red), 1),
+                0 0 36px rgba(var(--red), 0.45);
+            }
+
+            small, .small-2cP0Jg, .meta-1bd2Aw {
+              text-shadow:
+                0 0 3px rgba(var(--red), 0.9),
+                0 0 10px rgba(var(--red), 0.18) !important;
+            }

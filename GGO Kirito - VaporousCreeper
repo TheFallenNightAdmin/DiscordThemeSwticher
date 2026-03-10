@@ -1,0 +1,101 @@
+ :root,
+            .visual-refresh,
+            .visual-refresh.theme-dark {
+                --rgb-highlight: 255, 0, 0;
+                --highlight: rgb(var(--rgb-highlight));
+
+                --rgb-background: 20, 0, 0;
+                --background: rgb(var(--rgb-background));
+                --text: rgb(255, 255, 255);
+
+                --transition-time: 0.3s;
+
+                --background-image: url('https://i.imgur.com/rsQuabC.png');
+                --background-position: center;
+                --background-size: cover;
+                --background-blur: 3px;
+                --background-brightness: 100%;
+
+                --show-custom-title: 1;
+                --custom-title-text: "GGO Kirito";
+                --custom-title-font-size: 16px;
+                --custom-title-font-weight: bold;
+            }
+
+            html, body {
+                font-family: Arial, sans-serif;
+            }
+
+            .theme-dark body {
+                background-color: var(--background);
+                background-image: var(--background-image);
+                background-position: var(--background-position);
+                background-size: var(--background-size);
+                backdrop-filter: blur(var(--background-blur)) brightness(var(--background-brightness));
+            }
+
+            .theme-dark .appMount__51fd7,
+            .theme-dark .app__160d8,
+            .theme-dark .bg__960e4,
+            .theme-dark .guilds_c48ade,
+            .theme-dark .scroller_ef3116,
+            .theme-dark .sidebar_c48ade,
+            .theme-dark .sidebar_c48ade::after,
+            .theme-dark .container__2637a,
+            .theme-dark .chat_f75fb0,
+            .theme-dark .chatContent_f75fb0,
+            .theme-dark .title_f75fb0,
+            .theme-dark .searchBar__97492,
+            .theme-dark .container_c8ffbb,
+            .theme-dark .members_c8ffbb,
+            .theme-dark .content_f75fb0,
+            .theme-dark .container__91a9d,
+            .theme-dark .channelTextArea__74017,
+            .theme-dark .container__133bf,
+            .theme-dark .section__00943,
+            .theme-dark .nowPlayingColumn__133bf,
+            .theme-dark .container__7d20c,
+            .theme-dark .itemCard__7e549,
+            .theme-dark .inset_bf1984,
+            .theme-dark .container__9293f,
+            .theme-dark .privateChannels__35e86,
+            .theme-dark .scroller__99e7c,
+            .theme-dark .layer__960e4,
+            .theme-dark .standardSidebarView__23e6b,
+            .theme-dark .sidebarRegionScroller__23e6b,
+            .theme-dark .contentRegion__23e6b,
+            .theme-dark .contentRegionScroller__23e6b,
+            .theme-dark .container__4a84a,
+            .theme-dark .stickyHeader_adb41f,
+            .theme-dark .scroller_fb04e,
+            .theme-dark .pageWrapper_a3a4ce,
+            .theme-dark .footer__214dc,
+            .theme-dark .container_f369db {
+                background: rgba(0, 0, 0, 0) !important;
+            }
+
+            .theme-dark .numberBadge__2b1f5 {
+                background-color: var(--highlight) !important;
+                color: white;
+            }
+
+            .theme-dark .mention,
+            .theme-dark .channelMention .name_b52c3f {
+                background-color: rgba(255, 0, 0, 0.3);
+                color: var(--highlight);
+            }
+
+            .theme-dark .lookFilled__201d5:not(.shinyButton__6a443) {
+                background-color: var(--highlight) !important;
+            }
+
+            .title_c38106::before {
+                position: fixed;
+                left: 10px;
+                color: var(--highlight);
+                content: var(--custom-title-text);
+                font-size: calc(var(--custom-title-font-size) * var(--show-custom-title));
+                font-weight: var(--custom-title-font-weight);
+                display: block;
+                text-shadow: 0 0 6px rgba(var(--rgb-highlight), 0.95), 0 0 18px rgba(var(--rgb-highlight), 0.22);
+            }

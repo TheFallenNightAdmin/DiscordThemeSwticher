@@ -1,3 +1,10 @@
+/**
+ * @name Newbie
+ * @author Pagoni Hax
+ * @description Newbie is a wallpaper-driven Discord theme where most of the UI is made semi-transparent so your background image shows through everything.
+ * @version 15.0.0
+*/
+
 :root {
   --newbie-bg: #0a0a12;
   --newbie-bg2: #141427;

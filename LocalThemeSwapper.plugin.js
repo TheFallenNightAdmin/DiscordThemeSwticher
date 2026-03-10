@@ -2,7 +2,7 @@
  * @name LocalThemeSwitcher
  * @author Pagoni Hax
  * @description Randomly applies one of your installed BetterDiscord themes on startup. Press Escape to open the switcher.
- * @version 1.0.0
+ * @version 1.0.3
  */
 
 module.exports = (_ => {
@@ -312,6 +312,11 @@ module.exports = (_ => {
                 try { BdApi.Themes.disable(t.name); } catch(_) {}
             });
 
+            // Flush any lingering theme styles before applying the new one
+            document.querySelectorAll('style[id^="bd-"], bd-themes, #bd-stylesheet, link[href*=".theme.css"]').forEach(el => {
+                try { el.remove(); } catch(_) {}
+            });
+
             BdApi.Themes.enable(name);
             this._activeName = name;
             BdApi.Data.save('LocalThemeSwitcher','activeName', name);
@@ -323,9 +328,16 @@ module.exports = (_ => {
         _resetTheme() {
             const themes = this._getThemes();
             themes.forEach(t => { try { BdApi.Themes.disable(t.name); } catch(_) {} });
+
+            // Force-remove any lingering theme <style> tags BdApi may have left behind
+            document.querySelectorAll('style[id^="bd-"], bd-themes, #bd-stylesheet, link[href*=".theme.css"]').forEach(el => {
+                try { el.remove(); } catch(_) {}
+            });
+
             this._activeName = null;
             BdApi.Data.save('LocalThemeSwitcher','activeName', null);
             this._syncUI();
+            BdApi.UI.showToast('Theme reset.', { type: 'info', timeout: 2000 });
         }
 
         _buildPill() {

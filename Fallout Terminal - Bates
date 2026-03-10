@@ -1,0 +1,112 @@
+:root,
+            .visual-refresh,
+            .visual-refresh.theme-dark {
+                --rgb-highlight: 74, 239, 152;
+                --highlight: rgb(var(--rgb-highlight));
+
+                --rgb-background: 0, 9, 0;
+                --background: rgb(var(--rgb-background));
+                --text: rgb(var(--rgb-highlight));
+
+                --rgb-close-button: 212, 18, 39;
+                --close-button: rgb(var(--rgb-close-button));
+
+                --rgb-online-color: 57, 255, 20;
+                --online-color: rgb(var(--rgb-online-color));
+
+                --rgb-afk-color: 255, 255, 51;
+                --afk-color: rgb(var(--rgb-afk-color));
+
+                --rgb-dnd-color: 255, 0, 0;
+                --dnd-color: rgb(var(--rgb-dnd-color));
+
+                --rgb-streaming-color: 188, 19, 254;
+                --streaming-color: rgb(var(--rgb-streaming-color));
+
+                --transition-time: 0.3s;
+
+                --background-image: unset;
+                --background-position: center;
+                --background-size: cover;
+                --background-blur: 5px;
+                --background-brightness: 100%;
+
+                --show-original-title: 0;
+                --show-custom-title: 1;
+                --custom-title-text: "ROBCO Industries (tm)";
+                --custom-title-font-size: 16px;
+                --custom-title-font-weight: bold;
+                --custom-title-margin-top: 0px;
+                --custom-title-margin-left: 0px;
+            }
+
+            html, body {
+                font-family: "Share Tech Mono", monospace;
+            }
+
+            .theme-dark body {
+                background-color: var(--background);
+                background-image: var(--background-image);
+                background-position: var(--background-position);
+                background-size: var(--background-size);
+                backdrop-filter: blur(var(--background-blur)) brightness(var(--background-brightness));
+            }
+
+            body::after {
+                content: " ";
+                display: block;
+                position: absolute;
+                top: 0; left: 0; bottom: 0; right: 0;
+                background:
+                    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                    linear-gradient(90deg,
+                        rgba(255, 0, 0, 0.06),
+                        rgba(0, 255, 0, 0.02),
+                        rgba(0, 0, 255, 0.06)
+                    );
+                z-index: 2;
+                background-size: 100% 2px, 3px 100%;
+                pointer-events: none;
+            }
+
+            body {
+                box-shadow: 0 0 60px 10px rgba(74, 239, 152, 0.5) inset;
+                text-shadow: 0 0 6px rgba(var(--rgb-highlight), 0.95), 0 0 20px rgba(var(--rgb-highlight), 0.35);
+            }
+
+            .theme-dark body,
+            .theme-dark span,
+            .theme-dark p,
+            .theme-dark a,
+            .theme-dark h1,
+            .theme-dark h2,
+            .theme-dark h3,
+            .theme-dark .title_c38106,
+            .theme-dark .header_c19a55,
+            .theme-dark .info__2debe,
+            .theme-dark .message-2qnXI6,
+            .theme-dark .messageContent-2qWWxC,
+            .theme-dark .username {
+                color: var(--text) !important;
+                text-shadow: 0 0 6px rgba(var(--rgb-highlight), 0.95), 0 0 20px rgba(var(--rgb-highlight), 0.35);
+            }
+
+            .title_c38106::before {
+                position: fixed;
+                left: 10px;
+                color: var(--highlight);
+                content: var(--custom-title-text);
+                font-size: calc(var(--custom-title-font-size) * var(--show-custom-title));
+                font-weight: var(--custom-title-font-weight);
+                margin-top: var(--custom-title-margin-top);
+                margin-left: var(--custom-title-margin-left);
+                display: block;
+                text-shadow: 0 0 6px rgba(var(--rgb-highlight), 0.95), 0 0 24px rgba(var(--rgb-highlight), 0.42);
+            }
+
+            .info__2debe:last-child::after {
+                content: "Fallout 4 Terminal 4.0.1";
+                font-size: 12px;
+                line-height: 16px;
+                color: rgb(var(--rgb-highlight));
+            }

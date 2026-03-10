@@ -1,3 +1,10 @@
+/**
+ * @name TIO
+ * @author Pagoni Hax
+ * @description Tio is a wallpaper-driven Discord theme built around deep reds and blacks. The UI is mostly transparent so your background image bleeds through everything
+ * @version 0.0.1
+*/
+
 :root {
   --tso-bg: #000000;
   --tso-bg2: #0a0000;

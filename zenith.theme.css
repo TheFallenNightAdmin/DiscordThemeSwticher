@@ -1,32 +1,41 @@
 /**
  * @name Zenith (Amethyst Duel)
  * @author Pagoni Hax
- * @version 3.0
- * @description just a theme
+ * @version 5.0
+ * @description A theme
  */
 
 :root{
-    --background: url('https://i.imgur.com/29ntunn.jpeg');
+    --background: url('https://i.imgur.com/OLoDT8S.jpeg');
 
     --text: #f3e8ff;
 
     --primary: #c084fc;
-    --primary-glow: rgba(192,132,252,0.8);
+    --primary-strong: #a855f7;
+    --primary-glow: rgba(192,132,252,0.7);
 
-    --bg-dark: rgba(5,0,15,0.85);
-    --bg-mid: rgba(20,10,40,0.75);
-    --bg-light: rgba(40,20,70,0.6);
+    --bg-dark: rgba(5,0,15,0.75);
+    --bg-mid: rgba(20,10,40,0.55);
+    --bg-light: rgba(40,20,70,0.45);
+
+    --blur: blur(14px);
 }
 
 body {
-    background: var(--background) center/cover no-repeat fixed !important;
+    background-image: var(--background) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    color: var(--text);
 }
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(10,0,20,0.6);
+    background: radial-gradient(circle at center, rgba(40,0,80,0.3), rgba(0,0,0,0.85));
+    animation: ambientShift 12s ease-in-out infinite alternate;
     z-index: -1;
 }
 
@@ -36,55 +45,126 @@ body::before {
     background: transparent !important;
 }
 
+
 .container-1NXEtd,
 .sidebar-1tnWFu,
 .chat-2ZfjoI,
 .container-2cd8Mz {
     background: var(--bg-dark) !important;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(14px) saturate(140%);
+    border-right: 1px solid rgba(192,132,252,0.2);
+
+    box-shadow:
+        inset 0 0 20px rgba(192,132,252,0.05),
+        0 0 30px rgba(0,0,0,0.6);
 }
+
+.scrollableContainer-15eg7h {
+    background: var(--bg-mid) !important;
+    border-radius: 14px;
+    backdrop-filter: blur(16px) saturate(150%);
+
+    border: 1px solid rgba(192,132,252,0.4);
+    box-shadow:
+        0 0 12px var(--primary-glow),
+        inset 0 0 10px rgba(192,132,252,0.2);
+}
+
 
 * {
     color: var(--text) !important;
 }
 
+::selection {
+    background: var(--primary);
+    color: #fff;
+}
+
 button {
     background: var(--bg-light) !important;
-    border: 1px solid var(--primary);
-    box-shadow: 0 0 10px var(--primary-glow);
-    transition: 0.2s;
+    border-radius: 10px;
+    border: 1px solid rgba(192,132,252,0.5);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 10px var(--primary-glow),
+        inset 0 0 8px rgba(192,132,252,0.2);
+
+    transition: all 0.25s ease;
+
+    animation:
+        zenithPulse 4s infinite,
+        gradientShift 10s infinite alternate;
 }
 
 button:hover {
     background: var(--primary) !important;
-    box-shadow: 0 0 20px var(--primary-glow);
-    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px var(--primary-glow),
+        0 0 40px rgba(192,132,252,0.4);
+
+    transform: translateY(-3px) scale(1.05);
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+button:focus {
+    outline: 2px solid var(--primary-strong);
+}
+
+
+.message-2CShn3 {
+    transition: all 0.2s ease;
+    border-radius: 6px;
 }
 
 .message-2CShn3:hover {
     background: rgba(192,132,252,0.08) !important;
+    box-shadow: inset 0 0 10px rgba(192,132,252,0.1);
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
+
+.containerDefault-YUSmu3 {
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
 .containerDefault-YUSmu3:hover {
-    background: rgba(192,132,252,0.1) !important;
+    background: rgba(192,132,252,0.15) !important;
+    transform: translateX(3px);
 }
 
-.scrollableContainer-15eg7h {
-    background: var(--bg-mid) !important;
-    border: 1px solid var(--primary);
+::-webkit-scrollbar {
+    width: 8px;
 }
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary), var(--primary-strong));
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 
 @keyframes zenithPulse {
-    0% { box-shadow: 0 0 5px var(--primary-glow); }
-    50% { box-shadow: 0 0 18px rgba(220,170,255,1); }
-    100% { box-shadow: 0 0 5px var(--primary-glow); }
+    0% { box-shadow: 0 0 8px var(--primary-glow); }
+    50% { box-shadow: 0 0 20px rgba(220,170,255,1); }
+    100% { box-shadow: 0 0 8px var(--primary-glow); }
 }
 
-button {
-    animation: zenithPulse 3s infinite;
+@keyframes gradientShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(25deg); }
+}
+
+@keyframes ambientShift {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
 }

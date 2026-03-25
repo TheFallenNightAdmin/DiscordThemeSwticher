@@ -6,7 +6,20 @@
  */
 
 :root {
---background: url('https://raw.githubusercontent.com/TheFallenNightAdmin/DiscordThemeSwticher/main/zenith/background.jpg');
+body,
+#app-mount,
+.appMount-2yBXZl,
+.app-2CXKsg,
+.bg-1QIAus,
+[class*="app-"],
+[class*="appMount-"],
+[class*="bg-"] {
+    background-image: url('https://raw.githubusercontent.com/TheFallenNightAdmin/DiscordThemeSwticher/main/zenith/background.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
 
     --z-text:           #f3e8ff;
     --z-primary:        #c084fc;

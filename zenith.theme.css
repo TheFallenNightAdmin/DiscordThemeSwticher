@@ -1,0 +1,90 @@
+/**
+ * @name Zenith (Amethyst Duel)
+ * @author Pagoni Hax
+ * @version 3.0
+ * @description just a theme
+ */
+
+:root{
+    --background: url('https://i.imgur.com/29ntunn.jpeg');
+
+    --text: #f3e8ff;
+
+    --primary: #c084fc;
+    --primary-glow: rgba(192,132,252,0.8);
+
+    --bg-dark: rgba(5,0,15,0.85);
+    --bg-mid: rgba(20,10,40,0.75);
+    --bg-light: rgba(40,20,70,0.6);
+}
+
+body {
+    background: var(--background) center/cover no-repeat fixed !important;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(10,0,20,0.6);
+    z-index: -1;
+}
+
+.app-2CXKsg,
+.appMount-2yBXZl,
+.bg-1QIAus {
+    background: transparent !important;
+}
+
+.container-1NXEtd,
+.sidebar-1tnWFu,
+.chat-2ZfjoI,
+.container-2cd8Mz {
+    background: var(--bg-dark) !important;
+    backdrop-filter: blur(6px);
+}
+
+* {
+    color: var(--text) !important;
+}
+
+button {
+    background: var(--bg-light) !important;
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--primary) !important;
+    box-shadow: 0 0 20px var(--primary-glow);
+    transform: scale(1.05);
+}
+
+.message-2CShn3:hover {
+    background: rgba(192,132,252,0.08) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+.containerDefault-YUSmu3:hover {
+    background: rgba(192,132,252,0.1) !important;
+}
+
+.scrollableContainer-15eg7h {
+    background: var(--bg-mid) !important;
+    border: 1px solid var(--primary);
+}
+
+@keyframes zenithPulse {
+    0% { box-shadow: 0 0 5px var(--primary-glow); }
+    50% { box-shadow: 0 0 18px rgba(220,170,255,1); }
+    100% { box-shadow: 0 0 5px var(--primary-glow); }
+}
+
+button {
+    animation: zenithPulse 3s infinite;
+}

@@ -1,67 +1,51 @@
 /**
  * @name Zenith (Amethyst Duel)
  * @author Pagoni Hax
- * @version 6.0
+ * @version 6.3
  * @description A Theme
  */
 
 :root {
-body,
-#app-mount,
-.appMount-2yBXZl,
-.app-2CXKsg,
-.bg-1QIAus,
-[class*="app-"],
-[class*="appMount-"],
-[class*="bg-"] {
-    background-image: url('https://raw.githubusercontent.com/TheFallenNightAdmin/DiscordThemeSwticher/main/zenith/background.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-
     --z-text:           #f3e8ff;
     --z-primary:        #c084fc;
     --z-primary-strong: #a855f7;
     --z-primary-dim:    #7c3aed;
     --z-glow:           rgba(192, 132, 252, 0.65);
     --z-glow-strong:    rgba(192, 132, 252, 0.9);
-
     --z-bg-dark:        rgba(5,   0,  18, 0.80);
     --z-bg-mid:         rgba(18,  8,  40, 0.60);
     --z-bg-light:       rgba(38, 18,  72, 0.50);
     --z-border:         rgba(192, 132, 252, 0.22);
     --z-border-strong:  rgba(192, 132, 252, 0.45);
-
     --z-blur:           blur(16px) saturate(150%);
-
-    --background-primary:          var(--z-bg-dark)   !important;
-    --background-secondary:        var(--z-bg-mid)    !important;
-    --background-secondary-alt:    var(--z-bg-mid)    !important;
-    --background-tertiary:         var(--z-bg-light)  !important;
-    --background-floating:         var(--z-bg-dark)   !important;
-    --background-modifier-hover:   rgba(192,132,252,0.12) !important;
-    --background-modifier-active:  rgba(192,132,252,0.20) !important;
-    --background-modifier-selected:rgba(192,132,252,0.18) !important;
-    --text-normal:                 var(--z-text)      !important;
-    --text-muted:                  rgba(220,190,255,0.60) !important;
-    --text-link:                   var(--z-primary)   !important;
-    --interactive-normal:          var(--z-text)      !important;
-    --interactive-hover:           #fff               !important;
-    --interactive-active:          #fff               !important;
-    --interactive-muted:           rgba(220,190,255,0.45) !important;
-    --scrollbar-thin-thumb:        var(--z-primary)   !important;
-    --scrollbar-thin-track:        transparent        !important;
-    --scrollbar-auto-thumb:        var(--z-primary)   !important;
-    --scrollbar-auto-track:        transparent        !important;
-    --focus-primary:               var(--z-primary-strong) !important;
-    --brand-experiment:            var(--z-primary-strong) !important;
-    --brand-experiment-560:        var(--z-primary)   !important;
+    --background-primary:           var(--z-bg-dark)   !important;
+    --background-secondary:         var(--z-bg-mid)    !important;
+    --background-secondary-alt:     var(--z-bg-mid)    !important;
+    --background-tertiary:          var(--z-bg-light)  !important;
+    --background-floating:          var(--z-bg-dark)   !important;
+    --background-modifier-hover:    rgba(192,132,252,0.12) !important;
+    --background-modifier-active:   rgba(192,132,252,0.20) !important;
+    --background-modifier-selected: rgba(192,132,252,0.18) !important;
+    --text-normal:                  var(--z-text)      !important;
+    --text-muted:                   rgba(220,190,255,0.60) !important;
+    --text-link:                    var(--z-primary)   !important;
+    --interactive-normal:           var(--z-text)      !important;
+    --interactive-hover:            #fff               !important;
+    --interactive-active:           #fff               !important;
+    --interactive-muted:            rgba(220,190,255,0.45) !important;
+    --scrollbar-thin-thumb:         var(--z-primary)   !important;
+    --scrollbar-thin-track:         transparent        !important;
+    --scrollbar-auto-thumb:         var(--z-primary)   !important;
+    --scrollbar-auto-track:         transparent        !important;
+    --focus-primary:                var(--z-primary-strong) !important;
+    --brand-experiment:             var(--z-primary-strong) !important;
+    --brand-experiment-560:         var(--z-primary)   !important;
 }
 
-body {
-    background-image: var(--background-image) !important;
+.appMount__51fd7,
+.app__160d8,
+.bg__960e4 {
+    background-image: url('https://raw.githubusercontent.com/TheFallenNightAdmin/DiscordThemeSwticher/main/zenith/background.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -80,14 +64,6 @@ body::before {
         rgba(0,  0,   0, 0.82) 100%
     );
     animation: ambientShift 14s ease-in-out infinite alternate;
-}
-
-[class*="app-"],
-[class*="appMount-"],
-[class*="bg-"],
-[class*="baseLayer-"],
-[class*="layers-"] {
-    background: transparent !important;
 }
 
 [class*="guilds-"],
@@ -129,22 +105,22 @@ nav[class*="guilds"] {
 
 [class*="chat-"],
 [class*="content-"][class*="chat"],
-[class*="messagesWrapper-"],
-[class*="scrollableContainer-"] {
+[class*="messagesWrapper-"] {
     background: transparent !important;
 }
 
 [class*="scrollableContainer-"] {
-    background: var(--z-bg-mid) !important;
+    background: rgba(5, 0, 18, 0.2) !important;
     border-radius: 14px;
     backdrop-filter: var(--z-blur);
-    border: 1px solid var(--z-border-strong);
+    border: 1px solid rgba(192,132,252,0.2);
     box-shadow:
-        0 0 18px var(--z-glow),
-        inset 0 0 14px rgba(192,132,252,0.12);
+        0 0 18px rgba(192,132,252,0.25),
+        inset 0 0 14px rgba(192,132,252,0.08);
 }
 
 [class*="message-"] {
+    background: rgba(38, 18, 72, 0.3) !important;
     border-radius: 8px;
     transition: background 0.18s ease, box-shadow 0.18s ease;
 }
@@ -156,11 +132,11 @@ nav[class*="guilds"] {
 
 [class*="channelTextArea-"],
 [class*="textArea-"] {
-    background: var(--z-bg-light) !important;
+    background: rgba(38,18,72,0.35) !important;
     border-radius: 12px;
-    border: 1px solid var(--z-border-strong);
+    border: 1px solid rgba(192,132,252,0.2);
     backdrop-filter: var(--z-blur);
-    box-shadow: 0 0 10px var(--z-glow);
+    box-shadow: 0 0 10px rgba(192,132,252,0.4);
     transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 

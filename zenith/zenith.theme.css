@@ -1,7 +1,7 @@
 /**
  * @name Zenith (Amethyst Duel)
  * @author Pagoni Hax
- * @version 6.3
+ * @version 6.4
  * @description A Theme
  */
 
@@ -12,9 +12,9 @@
     --z-primary-dim:    #7c3aed;
     --z-glow:           rgba(192, 132, 252, 0.65);
     --z-glow-strong:    rgba(192, 132, 252, 0.9);
-    --z-bg-dark:        rgba(5,   0,  18, 0.80);
-    --z-bg-mid:         rgba(18,  8,  40, 0.60);
-    --z-bg-light:       rgba(38, 18,  72, 0.50);
+    --z-bg-dark:        rgba(5, 0, 18, 0.80);
+    --z-bg-mid:         rgba(18, 8, 40, 0.60);
+    --z-bg-light:       rgba(38, 18, 72, 0.50);
     --z-border:         rgba(192, 132, 252, 0.22);
     --z-border-strong:  rgba(192, 132, 252, 0.45);
     --z-blur:           blur(16px) saturate(150%);
@@ -61,7 +61,7 @@ body::before {
     background: radial-gradient(
         ellipse at center,
         rgba(60, 0, 120, 0.25) 0%,
-        rgba(0,  0,   0, 0.82) 100%
+        rgba(0, 0, 0, 0.82) 100%
     );
     animation: ambientShift 14s ease-in-out infinite alternate;
 }
@@ -72,9 +72,8 @@ nav[class*="guilds"] {
     background: var(--z-bg-dark) !important;
     backdrop-filter: var(--z-blur);
     border-right: 1px solid var(--z-border);
-    box-shadow:
-        inset  0 0 24px rgba(192,132,252,0.06),
-        0      0 30px rgba(0,0,0,0.55);
+    box-shadow: inset 0 0 24px rgba(192,132,252,0.06),
+                0 0 30px rgba(0,0,0,0.55);
 }
 
 [class*="container-"][class*="sidebar"],
@@ -103,36 +102,35 @@ nav[class*="guilds"] {
     box-shadow: inset 2px 0 0 var(--z-primary);
 }
 
+#app-mount,
 [class*="chat-"],
 [class*="content-"][class*="chat"],
-[class*="messagesWrapper-"] {
+[class*="messagesWrapper-"],
+[class*="scrollableContainer-"],
+[class*="chatContent-"],
+[class*="messages-"],
+[class*="scroller-"],
+[class*="scrollerInner-"],
+[class*="scrollerContent-"],
+[class*="uploadArea-"],
+[class*="outer-"] {
     background: transparent !important;
 }
 
-[class*="scrollableContainer-"] {
-    background: rgba(5, 0, 18, 0.2) !important;
-    border-radius: 14px;
-    backdrop-filter: var(--z-blur);
-    border: 1px solid rgba(192,132,252,0.2);
-    box-shadow:
-        0 0 18px rgba(192,132,252,0.25),
-        inset 0 0 14px rgba(192,132,252,0.08);
-}
-
 [class*="message-"] {
-    background: rgba(38, 18, 72, 0.3) !important;
+    background: rgba(38, 18, 72, 0.0) !important;
     border-radius: 8px;
     transition: background 0.18s ease, box-shadow 0.18s ease;
 }
 
 [class*="message-"]:hover {
-    background: rgba(192,132,252,0.07) !important;
+    background: rgba(192,132,252,0.05) !important;
     box-shadow: inset 0 0 12px rgba(192,132,252,0.08);
 }
 
 [class*="channelTextArea-"],
 [class*="textArea-"] {
-    background: rgba(38,18,72,0.35) !important;
+    background: rgba(38,18,72,0.0) !important;
     border-radius: 12px;
     border: 1px solid rgba(192,132,252,0.2);
     backdrop-filter: var(--z-blur);
@@ -143,9 +141,8 @@ nav[class*="guilds"] {
 [class*="channelTextArea-"]:focus-within,
 [class*="textArea-"]:focus-within {
     border-color: var(--z-primary);
-    box-shadow:
-        0 0 18px var(--z-glow),
-        0 0 36px rgba(192,132,252,0.25);
+    box-shadow: 0 0 18px var(--z-glow),
+                0 0 36px rgba(192,132,252,0.25);
 }
 
 button {
@@ -153,18 +150,16 @@ button {
     border-radius: 10px;
     border: 1px solid var(--z-border-strong) !important;
     backdrop-filter: blur(10px);
-    box-shadow:
-        0 0 8px var(--z-glow),
-        inset 0 0 8px rgba(192,132,252,0.15);
+    box-shadow: 0 0 8px var(--z-glow),
+                inset 0 0 8px rgba(192,132,252,0.15);
     transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.15s ease;
     animation: zenithPulse 5s ease-in-out infinite;
 }
 
 button:hover {
     background: var(--z-primary-dim) !important;
-    box-shadow:
-        0 0 22px var(--z-glow-strong),
-        0 0 44px rgba(192,132,252,0.35);
+    box-shadow: 0 0 22px var(--z-glow-strong),
+                0 0 44px rgba(192,132,252,0.35);
     transform: translateY(-2px) scale(1.04);
 }
 
@@ -208,9 +203,8 @@ button:focus-visible {
     backdrop-filter: var(--z-blur);
     border: 1px solid var(--z-border-strong);
     border-radius: 14px;
-    box-shadow:
-        0 0 30px rgba(0,0,0,0.7),
-        0 0 20px var(--z-glow);
+    box-shadow: 0 0 30px rgba(0,0,0,0.7),
+                0 0 20px var(--z-glow);
 }
 
 [class*="menu-"] {
@@ -218,7 +212,8 @@ button:focus-visible {
     backdrop-filter: var(--z-blur);
     border: 1px solid var(--z-border-strong);
     border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 16px var(--z-glow);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6),
+                0 0 16px var(--z-glow);
 }
 
 [class*="item-"][class*="menu"],
